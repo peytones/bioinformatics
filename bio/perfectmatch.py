@@ -1,7 +1,12 @@
 f = open('rosalind_pmch.txt','r')
 f.readline()
-strand = f.readline().strip('\n')
+strand = ''
+while True:
+	line = f.readline().strip('\n')
+	if not line: break
+	strand += line
 au = strand.count('A')
 gc = strand.count('G')
 from math import factorial
-print  long(factorial(au)) * long(factorial(gc))
+print au, gc
+print factorial(au) * factorial(gc)
